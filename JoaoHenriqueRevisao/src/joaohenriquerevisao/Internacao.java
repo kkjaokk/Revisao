@@ -17,6 +17,14 @@ public class Internacao {
     private Medico medicoR;
     private Enfermeiro enfermeiroR;
     private static int conta_internacao;
+    private double total_dias;
+    private static double total_internacoes;
+    
+    public Internacao(){
+        
+        
+        
+    }
     
     public Internacao(double valorDia, int qtdDias, Enfermeiro enfermeiroR, Medico medicoR, Paciente paciente){
         
@@ -32,8 +40,17 @@ public class Internacao {
     }
     
     public double calcularValorTotal() {
-        return valorDia * qtdDias;
+        total_dias = valorDia * qtdDias;
+        return total_dias;
     }
+    
+    public double todas_Internacoes(){
+        
+        total_internacoes += calcularValorTotal();
+        return total_internacoes;
+    }
+    
+    
     
     @Override
     public String toString() {
@@ -48,6 +65,24 @@ public class Internacao {
         
     }
 
+    public double getTotal_dias() {
+        return total_dias;
+    }
+
+    public void setTotal_dias(double total_dias) {
+        this.total_dias = total_dias;
+    }
+
+    public static double getTotal_internacoes() {
+        return total_internacoes;
+    }
+
+    public static void setTotal_internacoes(double total_internacoes) {
+        Internacao.total_internacoes = total_internacoes;
+    }
+
+    
+    
     public int getId_internacao() {
         return id_internacao;
     }
@@ -103,6 +138,8 @@ public class Internacao {
     public static void setConta_internacao(int conta_internacao) {
         Internacao.conta_internacao = conta_internacao;
     }
+    
+    
     
     
     

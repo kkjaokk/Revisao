@@ -37,14 +37,7 @@ public class Paciente extends Pessoa{
         internacoes.add(internacao);
     }
     
-    public double calcularValorTotalInternacoes() {
-        double total = 0;
-        for (Internacao internacao : internacoes) {
-            total += internacao.calcularValorTotal();
-        }
-        return total;
-    }
-
+    
     public String getMotivo_int() {
         return motivo_int;
     }

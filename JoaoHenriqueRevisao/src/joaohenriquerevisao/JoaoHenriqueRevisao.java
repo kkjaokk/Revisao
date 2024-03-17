@@ -7,11 +7,12 @@ public class JoaoHenriqueRevisao {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean op = true;
-        Paciente pacienteChamado = null;
 
         while (op) {
-            System.out.println("Informe o nome do paciente:");
-            String nomePaciente = scanner.nextLine();
+            
+
+            String nomePaciente;
+            nomePaciente = "Jorge";
 
             System.out.println("Informe o motivo da internacao:");
             String motivoInternacao = scanner.nextLine();
@@ -36,8 +37,7 @@ public class JoaoHenriqueRevisao {
             Internacao internacao = new Internacao(valorDia, quantidadeDias, enfermeiro, medico, paciente);
 
             System.out.println("Relatório da Internacao:\n" + internacao);
-
-            
+            System.out.println("Todas as internações: "+ internacao.todas_Internacoes());
 
             System.out.println("Deseja cadastrar outra internacao? (s/n)");
 
@@ -46,14 +46,8 @@ public class JoaoHenriqueRevisao {
                 op = false;
             }
         }
-        double valorTotalInternacoes = 0;
-        for (Internacao internacao : pacienteChamado.getInternacoes()) {
-            valorTotalInternacoes += internacao.calcularValorTotal();
-        }
-        System.out.println("Valor total de todas as internações do paciente: " + valorTotalInternacoes);
+        
 
         scanner.close();
-
-        
     }
 }
